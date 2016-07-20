@@ -1,27 +1,80 @@
-# Laravel PHP Framework
+# PGO-PHP - A PHP based Pokemon Go API Client (WIP)
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+PGO-PHP is a [Laravel](http://www.laravel.com) based PHP client built ontop of the Protocol Buffer used for Pokemon Go. The aim of PGO-PHP is to build a feature-rich library for PHP developers to make great apps based on Pokemon Go, as well as a fully featured RESTful HTTP API to power applications produced in other languages.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Installation
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+A basic understanding of Laravel, or similar composer based PHP frameworks is beneficial and expected at this stage. Once we have features built out, I plan to decouple PGO-PHP from Laravel to be used in your preferred framework.
 
-## Official Documentation
+Install via Git
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+``` bash
+$ git clone git@github.com:ashleyevans/pgo-php.git
+$ cd pgo-php
+```
 
-## Contributing
+Install Composer Dependencies
+``` bash
+$ composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Copy example .env file
+``` bash
+$ cp .env.example .env
+```
 
-## Security Vulnerabilities
+Enter your Auth and Location details to your .env file. You can use either a PTC or Google account to login to the app. Please note we are not sure of Niantic's view on API access yet and as such we strongly recommend you use a throwaway account to interact with this (and other) apps.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+``` bash
+AUTH_SERVICE=changeme
+AUTH_USERNAME=changeme
+AUTH_PASSWORD=changeme
+LOCATION="Buckingham Palace, London"
+```
+
+Once you're installed, it's best to run the pokemongo:test artisan command and look through the subsequent code
+``` bash
+$ php artisan pokemongo:test
+```
+
+
+## Current Progress
+
+PGO-PHP is very much a new project and as such is light in features. Currently working on PGO-PHP:
+
+ * Protocol Buffer Implementation
+ * Google Authentication
+ * PTC Authentication
+ * Token Caching (to speed up subsequent requests when auth servers are busy)
+ * Profile Display
+ 
+Please note the Pokemon Go servers are currently under severe load and often struggle during busy periods. Until proper Error Handling is added, you will come across some PHP errors. Please bare with me, or even better help add better Error Reporting where appropriate.
+
+## To-Do
+
+The priorities I will be working on include:
+
+ * Better Error Handling / Reporting
+ * Updated .proto file with new messages
+ * Begin Sample RESTful HTTP API
+ * Match features of Python implementations
+
+## Pull Requests / Contributions
+
+I encourage and look forward to your submissions to help push this project further. If you have any ideas, suggestions or comments please do let me know or feel free to submit a pull request with new features / improvements.
+
+Please note: The purpose of PGO-PHP is to enhance the Pokemon Go experience, and as such we won't accept any PRs or include code which is designed to negatively effect the playing experience of Pokemon Go for others.
+
+
+## Thanks
+
+Thanks to the following people who have made this project with their hard work and dedication
+
+ * [Tejado](https://github.com/tejado/)
+ * [Mila432](https://github.com/Mila432/)
+ * [LeeGao](https://github.com/leegao/)
 
 ## License
 
+PGO-PHP is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
