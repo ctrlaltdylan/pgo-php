@@ -63,12 +63,12 @@ The priorities I will be working on include:
 
 I encourage and look forward to your submissions to help push this project further. If you have any ideas, suggestions or comments please do let me know or feel free to submit a pull request with new features / improvements.
 
-Please note: The purpose of PGO-PHP is to enhance the Pokemon Go experience, and as such we won't accept any PRs or include code which is designed to negatively effect the playing experience of Pokemon Go for others.
+Please note: The purpose of PGO-PHP is to enhance the Pokemon Go experience, and as such we won't accept any PRs or include code which is designed to negatively impact the playing experience of Pokemon Go for others.
 
 
 ## Thanks
 
-Thanks to the following people who have made this project with their hard work and dedication
+Thanks to the following people who have made this project possible with their hard work and dedication
 
  * [Tejado](https://github.com/tejado/)
  * [Mila432](https://github.com/Mila432/)
